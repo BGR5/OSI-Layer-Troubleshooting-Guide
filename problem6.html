@@ -1,0 +1,52 @@
+<div class="container" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 900px; margin: auto; padding: 20px; color: #2c3e50; line-height: 1.6;">
+
+  <h2 style="border-bottom: 2px solid #ccc; padding-bottom: 8px; margin-bottom: 20px;">Problem #6: Missing routes - No path defined to reach certain networks</h2>
+
+  <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; margin-bottom: 20px;">
+    <img src="Project Report/images/problem6/resim1.png" alt="Missing routes screenshot 1" style="max-width: 48%; border: 1px solid #ddd; border-radius: 5px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+    <img src="Project Report/images/problem6/resim2.png" alt="Missing routes screenshot 2" style="max-width: 48%; border: 1px solid #ddd; border-radius: 5px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+  </div>
+
+  <p style="font-size: 16px;">
+    The error <strong>“Missing routes: No path defined to reach certain networks”</strong> occurs when a router or device does not have a valid route in its routing table to forward packets to a specific destination network. As a result, the data cannot be delivered and is dropped.
+  </p>
+  <p style="font-size: 16px;">
+    In other words, the router doesn’t know where to send the traffic, so the packets are discarded.
+  </p>
+
+  <h2 style="margin-top: 40px; border-bottom: 2px solid #ccc; padding-bottom: 8px;">Common Causes of Missing Routes</h2>
+  <ul style="margin-left: 20px; font-size: 16px; margin-bottom: 30px;">
+    <li>Static routes not configured</li>
+    <li>Dynamic routing protocols (e.g., RIP, OSPF, EIGRP) not enabled or misconfigured</li>
+    <li>Incorrect default gateway or next-hop settings</li>
+  </ul>
+
+  <h2 style="margin-top: 40px; border-bottom: 2px solid #ccc; padding-bottom: 8px;">How to Fix:</h2>
+  <ol style="font-size: 16px; margin-bottom: 30px;">
+    <li style="margin-bottom: 25px;">
+      <strong>Configure Static Routes</strong><br>
+      Manually add a static route to the destination network.<br>
+      <code style="display: block; background: #f4f4f4; padding: 8px 12px; border-radius: 4px; margin-top: 8px; font-family: Consolas, monospace;">
+        Router(config)# ip route [destination-network] [subnet-mask] [next-hop IP or exit-interface]
+      </code>
+      <img src="Project Report/images/problem6/resim3.png" alt="Static route configuration example" style="width: 100%; max-width: 600px; margin-top: 15px; border: 1px solid #ddd; border-radius: 5px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+    </li>
+
+    <li>
+      <strong>Use a Dynamic Routing Protocol</strong><br>
+      Configure a routing protocol like RIP, OSPF, or EIGRP to automatically exchange routing information.<br><br>
+      <strong>Example (OSPF):</strong><br>
+      <code style="display: block; background: #f4f4f4; padding: 8px 12px; border-radius: 4px; font-family: Consolas, monospace;">
+        Router(config)# router ospf 1<br>
+        Router(config-router)# network 192.168.1.0 0.0.0.255 area 0<br>
+        Router(config-router)# network 10.0.0.0 0.0.0.3 area 0
+      </code>
+    </li>
+  </ol>
+
+  <a href="Project Report/cisco_files/problem6.pkt" download style="display: inline-block; margin-top: 15px; padding: 12px 20px; background-color: #2980b9; color: white; text-decoration: none; border-radius: 5px; font-weight: 600; transition: background-color 0.3s ease;">
+    Download the packet tracer file of problem6
+  </a>
+
+</div>
+

@@ -1,0 +1,62 @@
+<div class="container" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 900px; margin: auto; padding: 20px; color: #2c3e50; line-height: 1.6;">
+
+  <h2 style="border-bottom: 2px solid #ccc; padding-bottom: 8px; margin-bottom: 20px;">Problem #4: Duplicate IP Address Issue</h2>
+
+  <img src="Project Report/images/problem4/resim2.png" alt="Duplicate IP Address" 
+       style="width: 100%; max-width: 600px; border-radius: 6px; margin-bottom: 20px; box-shadow: 0 3px 8px rgba(0,0,0,0.1); border: 1px solid #ddd;">
+
+  <p style="font-size: 16px;">
+    A duplicate IP address happens when two devices on the same network are assigned the same IP address. Within a subnet, only one device should have a unique IP address. Otherwise, this can cause problems for users trying to utilize applications and network services.
+  </p>
+
+  <h2 style="color: #2980b9; margin-top: 40px; margin-bottom: 15px;">Common Causes of Duplicate IP Address Issue</h2>
+  <ul style="font-size: 16px; margin-left: 20px;">
+    <li style="margin-bottom: 15px;">
+      <strong>Static IP Allocation:</strong> When network admins manually assign IPs to devices, errors may lead to two devices sharing the same IP. Using poor IP management methods like spreadsheets can worsen this issue.
+    </li>
+    <li>
+      <strong>DHCP Server Issues:</strong> Inefficient or buggy DHCP servers might assign conflicting IP addresses during dynamic allocation, causing IP conflicts.
+    </li>
+  </ul>
+
+  <h2 style="color: #2980b9; margin-top: 40px; margin-bottom: 15px;">How to Fix:</h2>
+  <ol style="font-size: 16px; margin-left: 20px;">
+    <li style="margin-bottom: 20px;">
+      <strong>Identify Affected Devices</strong><br>
+      Use discovery tools to locate devices with conflicting IPs and identify their connected switch ports.
+    </li>
+    <li style="margin-bottom: 20px;">
+      <strong>Restart Your Router</strong><br>
+      Rebooting the router often prompts it to assign new IP addresses, resolving conflicts automatically.
+    </li>
+    <li style="margin-bottom: 20px;">
+      <strong>Manual Change of IP Address</strong><br>
+      If restarting doesn’t help, assign static IPs manually, ensuring they don’t overlap with DHCP-assigned addresses.
+    </li>
+
+    <img src="Project Report/images/problem4/resim1.png" alt="Manual IP Change Example" 
+         style="width: 100%; max-width: 600px; border-radius: 6px; margin: 15px 0; box-shadow: 0 3px 8px rgba(0,0,0,0.1); border: 1px solid #ddd;">
+
+    <li style="margin-bottom: 20px;">
+      <strong>Check for DHCP Settings</strong><br>
+      Ensure devices are set to obtain IPs automatically (via DHCP), avoiding conflicting static assignments.
+    </li>
+    <li style="margin-bottom: 20px;">
+      <strong>Disable and Enable Network Adapter</strong><br>
+      Resetting the adapter can clear temporary IP conflicts.
+    </li>
+    <li style="margin-bottom: 20px;">
+      <strong>Update Network Adapter Driver</strong><br>
+      Outdated or corrupted drivers can cause IP issues; update or reinstall as needed.
+    </li>
+    <li style="margin-bottom: 20px;">
+      <strong>Look for Unauthorized DHCP Servers</strong><br>
+      Use network tools to find rogue DHCP servers, often caused by unauthorized routers on the network.
+    </li>
+    <li>
+      <strong>Configure DHCP Exclusions</strong><br>
+      Reserve IP ranges for static assignments to prevent conflicts with DHCP address pools.
+    </li>
+  </ol>
+
+</div>

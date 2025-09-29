@@ -1,0 +1,99 @@
+<div class="container" style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 900px; margin: auto; padding: 20px;">
+
+  <h2 style="color: #2c3e50; border-bottom: 2px solid #ccc; padding-bottom: 5px;">Problem #7: HTTP 408 Request Timeout Error</h2>
+  
+  <img src="Project Report/images/problem7/resim1.png" alt="HTTP 408 Error Image" style="width: 100%; max-width: 600px; margin: 20px 0; border: 1px solid #ddd; border-radius: 5px;">
+  
+  <p>
+    When browsing the web, the HTTP 408 "Request Timeout" error indicates a failure in communication between your browser and the target server. The server didn’t receive your complete request in time.
+  </p>
+
+  <h3 style="color: #34495e; margin-top: 30px;">Common Causes of HTTP 408 Errors</h3>
+
+  <section>
+    <h4 style="color: #2980b9;">Client-Side Causes</h4>
+    <ul style="padding-left: 20px;">
+      <li><strong>Slow network connection:</strong> Unstable internet may delay request delivery.</li>
+      <li><strong>Browser or timeout settings:</strong> Timeouts in software may cut off slow responses.</li>
+      <li><strong>Incorrect URL:</strong> Mistyped or invalid addresses can cause a timeout.</li>
+      <li><strong>Firewall/security software:</strong> Strict local settings might block outgoing requests.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h4 style="color: #2980b9;">Server-Side Causes</h4>
+    <ul style="padding-left: 20px;">
+      <li><strong>Server overload:</strong> Too many requests might prevent timely processing.</li>
+      <li><strong>Server timeout settings:</strong> Servers may disconnect slow clients.</li>
+      <li><strong>Backend application issues:</strong> Faulty apps may delay response generation.</li>
+      <li><strong>Network issues:</strong> Latency or packet loss between client and server.</li>
+    </ul>
+  </section>
+
+  <h3 style="color: #34495e; margin-top: 30px;">How to Fix</h3>
+  <ol style="padding-left: 20px;">
+    <li><a href="#cozum7.1">Basic Checks</a></li>
+    <li><a href="#cozum7.2">Client-Side Solutions</a></li>
+    <li><a href="#cozum7.3">Advanced Client-Side Troubleshooting</a></li>
+    <li><a href="#cozum7.4">Server-Side Solutions</a></li>
+    <li><a href="#cozum7.5">Advanced Troubleshooting</a></li>
+    <li><a href="#cozum7.6">Prevention Tips</a></li>
+  </ol>
+
+  <!-- Sections -->
+  <section id="cozum7.1">
+    <h4 style="color: #27ae60;">1. Basic Checks</h4>
+    <ul>
+      <li><strong>Refresh the page:</strong> Use F5 or the reload button.</li>
+      <li><strong>Check the URL:</strong> Make sure the address is entered correctly.</li>
+      <li><strong>Test your internet connection:</strong> Try accessing reliable websites and running a speed test.</li>
+    </ul>
+  </section>
+
+  <section id="cozum7.2">
+    <h4 style="color: #27ae60;">2. Client-Side Solutions</h4>
+    <ul>
+      <li><strong>Clear browser cache:</strong> Remove temporary data that may conflict with the page.</li>
+      <li><strong>Disable extensions:</strong> Especially those altering page behavior (e.g., ad blockers).</li>
+      <li><strong>Update browser & OS:</strong> Get the latest performance and security improvements.</li>
+    </ul>
+  </section>
+
+  <section id="cozum7.3">
+    <h4 style="color: #27ae60;">3. Advanced Client-Side Troubleshooting</h4>
+    <ul>
+      <li><strong>Inspect network requests:</strong> Use DevTools to identify long or failed requests.</li>
+      <li><strong>Change DNS servers:</strong> Try public options like Google (8.8.8.8) or Cloudflare (1.1.1.1).</li>
+    </ul>
+  </section>
+
+  <section id="cozum7.4">
+    <h4 style="color: #e67e22;">4. Server-Side Solutions (Admins)</h4>
+    <ul>
+      <li><strong>Review recent changes:</strong> Themes, plugins, or server configs may be responsible.</li>
+      <li><strong>Inspect server logs:</strong> Look for slow queries, resource limits, or script errors.</li>
+      <li><strong>Adjust timeout settings:</strong> Carefully increase server wait times if necessary.</li>
+    </ul>
+  </section>
+
+  <section id="cozum7.5">
+    <h4 style="color: #e67e22;">5. Advanced Troubleshooting</h4>
+    <ul>
+      <li><strong>Contact website owner/host:</strong> They can check backend or hosting-level issues.</li>
+      <li><strong>Use monitoring tools:</strong> Track uptime and performance proactively (e.g., Pingdom, UptimeRobot).</li>
+    </ul>
+  </section>
+
+  <section id="cozum7.6">
+    <h4 style="color: #c0392b;">6. Prevention Tips</h4>
+    <ul>
+      <li><strong>Stable internet:</strong> Prefer Ethernet for better consistency.</li>
+      <li><strong>Stay updated:</strong> Keep all relevant software current.</li>
+      <li><strong>Optimize websites:</strong> Minify code, compress media, and implement caching.</li>
+      <li><strong>Monitor resources:</strong> Watch CPU, RAM, and disk usage regularly.</li>
+      <li><strong>Test thoroughly after updates:</strong> Identify issues before they affect visitors.</li>
+    </ul>
+  </section>
+
+</div>
+

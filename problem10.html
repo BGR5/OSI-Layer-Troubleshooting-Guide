@@ -1,0 +1,85 @@
+<div class="container" style="max-width: 900px; margin: 30px auto; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; padding: 20px; background: #fafafa; border-radius: 8px; box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);">
+  <h1 style="color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 8px; margin-bottom: 20px;">
+    Problem #10: Layer 2 - Switch Port Not Forwarding Frames
+  </h1>
+
+  
+  <p style="font-size: 1.1rem;">
+    A switch port may fail to forward Ethernet frames due to misconfigurations or hardware issues at the Data Link Layer (Layer 2). 
+    Although physical connectivity might appear normal (link lights are on), devices connected through that port cannot communicate.
+  </p>
+
+  <h2 style="color: #34495e; margin-top: 35px; border-bottom: 2px solid #2980b9; padding-bottom: 6px;">
+    Common Causes of Switch Port Forwarding Issues
+  </h2>
+  <ul style="list-style-type: disc; margin-left: 20px; font-size: 1rem; color: #555;">
+    <li>Port is administratively disabled (shutdown)</li>
+    <li>Port is in error-disabled state due to security violations or spanning tree problems</li>
+    <li>Incorrect VLAN assignment or mismatch</li>
+    <li>Faulty or loose cables or hardware failure</li>
+    <li>MAC address table corruption or flooding</li>
+  </ul>
+
+  <h2 style="color: #34495e; margin-top: 35px; border-bottom: 2px solid #2980b9; padding-bottom: 6px;">
+    How to Fix:
+  </h2>
+  <ol style="font-size: 1rem; color: #444; padding-left: 20px;">
+    <li style="margin-bottom: 25px;">
+      <strong>Check Port Status</strong><br>
+      Use the command <code style="background:#f0f0f0; padding: 2px 6px; border-radius: 4px;">show interfaces status</code> on the switch to verify if the port is enabled and operational.<br>
+      Example output should show the port as <em>connected</em> and not <em>disabled</em> or <em>err-disabled</em>.<br>
+     
+    </li>
+
+    <li style="margin-bottom: 25px;">
+      <strong>Enable the Port If Disabled</strong><br>
+      If the port is administratively down, enter interface configuration mode and use <code style="background:#f0f0f0; padding: 2px 6px; border-radius: 4px;">no shutdown</code>.<br>
+      <pre style="background: #272c34; color: #abb2bf; padding: 12px 16px; border-radius: 6px; overflow-x: auto; margin-top: 8px;">
+Switch# configure terminal
+Switch(config)# interface GigabitEthernet0/1
+Switch(config-if)# no shutdown
+      </pre>
+    </li>
+
+    <li style="margin-bottom: 25px;">
+      <strong>Check VLAN Assignment</strong><br>
+      Ensure the port is assigned to the correct VLAN with <code style="background:#f0f0f0; padding: 2px 6px; border-radius: 4px;">show vlan brief</code>.<br>
+      Correct mismatches by reassigning the VLAN:<br>
+      <pre style="background: #272c34; color: #abb2bf; padding: 12px 16px; border-radius: 6px; overflow-x: auto; margin-top: 8px;">
+Switch(config-if)# switchport access vlan 10
+      </pre>
+    </li>
+
+    <li style="margin-bottom: 25px;">
+      <strong>Verify Spanning Tree Status</strong><br>
+      Check if the port is blocked by Spanning Tree Protocol (STP) using <code style="background:#f0f0f0; padding: 2px 6px; border-radius: 4px;">show spanning-tree interface GigabitEthernet0/1</code>.<br>
+      If the port is in blocking or err-disabled state due to STP, investigate root cause (loops, misconfigurations) and resolve.<br>
+      You may re-enable err-disabled ports:<br>
+      <pre style="background: #272c34; color: #abb2bf; padding: 12px 16px; border-radius: 6px; overflow-x: auto; margin-top: 8px;">
+Switch(config)# errdisable recovery cause stp
+Switch(config)# errdisable recovery interval 300
+      </pre>
+    </li>
+
+    <li style="margin-bottom: 25px;">
+      <strong>Inspect Physical Connectivity</strong><br>
+      Check cables, connectors, and SFP modules. Replace faulty hardware.<br>
+      Try connecting a known-good device or cable to isolate the issue.
+    </li>
+
+    <li style="margin-bottom: 25px;">
+      <strong>Clear MAC Address Table</strong><br>
+      If MAC address table corruption or flooding is suspected, clear it with:<br>
+      <pre style="background: #272c34; color: #abb2bf; padding: 12px 16px; border-radius: 6px; overflow-x: auto; margin-top: 8px;">
+Switch# clear mac address-table dynamic
+      </pre>
+      This forces the switch to relearn MAC addresses.
+    </li>
+
+    <li style="margin-bottom: 10px;">
+      <strong>Test Connectivity</strong><br>
+      After fixes, test connectivity by pinging devices on the same VLAN or using <code style="background:#f0f0f0; padding: 2px 6px; border-radius: 4px;">show mac address-table</code> to verify addresses are learned.
+    </li>
+  </ol>
+</div>
+

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Problem #8 – Destination Host Unreachable</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f8;
+      color: #2c3e50;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    }
+
+    h2 {
+      color: #2980b9;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      color: #34495e;
+      margin-top: 24px;
+      margin-bottom: 8px;
+    }
+
+    p, li {
+      font-size: 1.05em;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    ol {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 24px;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 12px 0;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.05);
+    }
+
+    strong {
+      color: #2c3e50;
+      font-weight: bold;
+      display: inline-block;
+      margin: 6px 0;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Problem #8: Destination Host Unreachable</h2>
+
+    <img src="Project Report/images/problem8/resim1.png" alt="Ping Error Screenshot">
+
+    <p>Performing a CMD ping test can measure your latency, check the network connectivity of your computer, and show the quality of your connection. However, many users encounter the "Destination Host Unreachable" error during these tests. This typically indicates there is no route to the destination. </p>
+
+    <p>If the error simply says <strong>“Destination host unreachable”</strong>, it means your PC cannot find a route to the destination. If it says <strong>"Reply from [IP]: Destination host unreachable"</strong>, then there's likely a routing issue on the remote side.</p>
+
+    <h2>How to Fix:</h2>
+    <ol>
+      <li>
+        <h3>Check Your Internet Connection</h3>
+        Open your browser and visit a known website like <a href="https://google.com" target="_blank">google.com</a>. If it loads successfully, your internet is fine, and the issue lies within your local network.
+      </li>
+
+      <li>
+        <h3>Test Your IPv6 Connection</h3>
+        If IPv6 has issues, it can also trigger this error.
+        <br><strong>Step 1:</strong> Press <code>Win + R</code>, type <code>cmd</code>, and hit Enter.
+        <img src="Project Report/images/problem8/resim2.png" alt="Open Command Prompt">
+
+        <br><strong>Step 2:</strong> In the CMD window, run:
+        <code>ping -6 192.168.1.1</code>
+        <img src="Project Report/images/problem8/resim3.png" alt="Ping IPv6">
+
+        <br><strong>Step 3:</strong> If the error persists, use:
+        <code>tracert [IP address]</code> to trace the route.
+        <img src="Project Report/images/problem8/resim4.png" alt="Traceroute command">
+
+        <br><strong>Step 4:</strong> If it still fails, check the default gateway settings by typing:
+        <code>netsh</code> → <code>interface ipv6</code> → <code>show config</code>
+        <img src="Project Report/images/problem8/resim6.png" alt="netsh command output">
+      </li>
+
+      <li>
+        <h3>Add the Right Gateway Address Manually</h3>
+        If the default gateway is incorrect or missing, add it manually:
+        <br><strong>Step 1:</strong> Open <code>Settings → Network & Internet</code><br>
+        <strong>Step 2:</strong> Choose <strong>Ethernet</strong> from the sidebar<br>
+        <strong>Step 3:</strong> Click <strong>Change adapter options</strong><br>
+        <strong>Step 4:</strong> Right-click your network > <strong>Properties</strong><br>
+        <strong>Step 5:</strong> Select <strong>Internet Protocol Version 6 (TCP/IPv6)</strong> > click <strong>Properties</strong><br>
+        <strong>Step 6:</strong> Enter the correct <strong>Default Gateway</strong> and save. Restart your PC and test again.
+      </li>
+    </ol>
+  </div>
+</body>
+</html>

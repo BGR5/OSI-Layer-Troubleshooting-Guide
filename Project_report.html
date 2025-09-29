@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Tutorial - DNS Server Not Responding</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            padding: 30px;
+        }
+        .container {
+            max-width: 800px;
+            background: white;
+            padding: 40px;
+            margin: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        ol {
+            padding-left: 20px;
+        }
+        code {
+            background: #eee;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Problem #1: DNS Server Not Responding</h1>
+
+        <p>
+            A DNS is a naming system that takes alphanumeric domain names (or “hostnames”) and turns them into numeric IP addresses. Essentially, DNS servers act as translators.
+            When you input a web address into your browser, it is forwarded to a DNS server from your router, where it’s then dissolved and returned as an IP address. However, if the DNS server is unable to properly complete this name resolution process, the end result is usually a message indicating that the DNS server is not responding.
+        </p>
+
+        <p>
+            “DNS server not responding” means that your browser was unable to establish a connection to the internet.
+        </p>
+
+        <h2>Common Causes of DNS Issues</h2>
+        <ul>
+            <li>Hardware and software issues</li>
+            <li>Incorrect or missing DNS records</li>
+            <li>The DNS server might be unavailable</li>
+        </ul>
+
+        <h2>How to Fix:</h2>
+         <ul>
+            <li><a href="#cozum1.1">Use a Different Browser</a></li>
+            <li><a href="#cozum1.2">Change Your DNS Server Address:</a></li>
+            <li><a href="#cozum1.3">Turn Off Antivirus and Firewall:</a></li>
+        </ul>
+        <ol>
+            <li id="cozum1.1">
+                <strong>Use a Different Browser:</strong><br>
+                For example, if your default browser is Safari or Google Chrome, visit the desired website from Mozilla Firefox or Microsoft Edge instead.
+                If switching browsers works, you’ll likely need to update your default browser to the latest version or uninstall and reinstall it.
+                However, if you still see the “DNS server not responding” error, you can rule out your browser as the source of the issue.
+            </li>
+
+            <li id="cozum1.2">
+                <strong>Change Your DNS Server Address:</strong><br>
+                <img src="Project Report\images\problem1\Resim1.png" alt="DNS Hatası"><br>
+                By default, your home network obtains a DNS server address from your internet service provider (ISP).
+                Start by clicking on the Windows button in the bottom-left corner of the task bar. In the search field, type “Ağ durumu”, and then select <strong>Ağ Durumu</strong> from the menu that appears.
+                
+                <img src="Project Report\images\problem1\Resim2.png" alt="DNS Hatası">
+                <p>In the window that opens, click on <strong>"Ağ ve Paylaşım Merkezi"</strong></p>
+                <img src="Project Report\images\problem1\Resim3.png" alt="DNS Hatası">
+                <p>Next, choose the internet adapter you’re currently using</p>
+                <img src="Project Report\images\problem1\Resim4.png" alt="DNS Hatası">
+                <p>Click <strong>"Özellikler"</strong></p>
+                <img src="Project Report\images\problem1\Resim5.png" alt="DNS Hatası">
+
+                <p>In the window that opens, choose <strong>Inernet Protokolü Sürüm 4 (TCP/IPv4)</strong> and then click on the <strong>"Özellikler"</strong> button.</p>
+                <img src="Project Report\images\problem1\Resim6.png" alt="DNS Hatası">
+                <p>To manually assign a different DNS server address, select <strong>"Aşağıdaki DNS sunucu adreslerini kullan"</strong> and input the address of an alternative server.</p>
+                <img src="Project Report\images\problem1\Resim7.png" alt="DNS Hatası">
+                <img src="Project Report\images\problem1\Resim8.png" alt="DNS Hatası">
+
+                <p>After you enter the new DNS information, click <strong>"Tamam"</strong> followed by <strong>"Uygula"</strong>.
+                Restart your web browser and visit the website again to check if the issue is resolved.</p>
+            </li>
+
+            <li id="cozum1.3">
+                <strong>Turn Off Antivirus and Firewall:</strong><br>
+                Temporarily deactivate your firewall. Antivirus software and firewalls are critical for safeguarding your devices, but they can sometimes cause issues that interfere with network connections.
+
+                <p>For Windows users, you can do this by going to:<br>
+                <strong>Güncelleştirme ve Güvenlik > Windows Güvenliği > Virüs ve Tehdit Koruması > Ayarları Yönet</strong></p>
+            </li>
+        </ol>
+    </div>
+     <div class="container">
+        <h1>Problem #2: HTTP 503 Service Unavailable Error</h1>
+        <img src="Project Report/images/problem2/service-unavailable.webp" color="blue">
+        <p>The HTTP 503 Service Unavailable error means that a website can’t be reached at the moment because the server is not ready to handle the request. This could happen because it’s too busy, under maintenance, or something else which requires a deeper analysis.</p>
+        <h2>Common Causes of DNS Issues</h2>
+        <li>There is a high number of requests being sent to the server, exhausting all the available resources.</li>
+        <li>Server is experiencing technical issues or maintenance work.</li>
+        <li>The server could be under a Denial of Service (DDoS) attack.</li>
+        <h2>How to Fix:</h2>
+         <ul>
+            <li><a href="#cozum2.1">Restart Your Server</a></li>
+            <li><a href="#cozum2.2">Check If Your Web Server is Running into Maintenance</a></li>
+            <li><a href="#cozum2.3">Fix Faulty Firewall Configurations</a></li>
+            <li><a href="#cozum2.4">Sift Through Your Server-Side Logs</a></li>
+        </ul>
+        <ol>
+            <li id="cozum2.1"><strong>Restart Your Server</strong><br>
+            Visitors may see a 503 (Service Unavailable) error message when your website is unavailable. This is because the server where your website is hosted is unavailable, which means your website will be unavailable.
+You can restart your server to address this issue. This is generally effective at resolving the problem and allowing people to return. However, if the problem persists, ensure that your server has all of the latest upgrades installed and try restarting it again.
+Don't hesitate to approach a hosting company or web host if you need help.</li>
+            <li id="cozum2.2"><strong>Check If Your Web Server is Running into MaintenanceC</strong><br>
+                You might get an HTTP 503 error when your web server is down for maintenance. The server is down and unable to serve requests due to this mistake.
+
+If your web server is under maintenance and you want to check if it's done, try reaccessing the website after it's completed. Depending on your browser or server's configuration, you may have to restart it if all of these steps fail.</li>
+            <li id="cozum2.3"><strong>Fix Faulty Firewall Configurations</strong><br>
+               Firewalls are required for computer and network security, but they may also Report HTTP Error 503.
+It's critical to determine what may be causing this problem and take action to correct it if you're encountering it. This might consist of disabling any unnecessary services on the firewall that are causing issues or even rebooting your computer or router.</li>
+            <li id="cozum2.4"><strong>Sift Through Your Server-Side Logs</strong><br>
+                When there is a problem with your website or server, HTTP Error 503 is the most common status code. You'll have to go through your server-side logs and locate the problem to solve it.
+
+Sometimes, simply fixing the problem is sufficient, but other times you'll need to contact your hosting provider or utilize a third-party service.
+
+Making sure that server-side errors don't reoccur is essential - this might mean keeping detailed error logs and using browser add-ons like Google Analytics to monitor web page visits.</li>
+        </ol>
+     </div>
+
+     <div class="container">
+        <h1>Problem #3: Port Blocking Issue</h1>
+        <img src="Project Report/images/problem3/resim1.png">
+        <p>A client device (e.g., PC) cannot connect to a server using a specific TCP or UDP port (e.g., port 80 for HTTP, port 443 for HTTPS, or port 25 for SMTP). The connection times out or fails even though IP connectivity (ping) might be working.</p>
+        <h2>Common Causes of Port Blocking Issue</h2>
+        <li> Firewall Rules (Local or Network)</li>
+        <li>NAT (Network Address Translation) Issues</li>
+        <li>Misconfigured Router or ACLs(Acces Control List)</li>
+        <h2>How to Fix:</h2>
+        <li><strong>Misconfigured Router or ACLs(Acces Control List)</strong><br>
+            Access Control Lists (ACLs) are used in routers and switches to control which packets are allowed or denied based on criteria such as IP addresses, protocols, and ports. If a port (like TCP port 80) is being blocked, an ACL might be explicitly denying it. Sometimes, this happens unintentionally due to a misconfigured rule or incorrect placement of the ACL.</li>
+        <ol>
+            <li><strong> Basic IP Connectivity</strong><br>
+                Command: ping [destination IP]<br>
+                Purpose: Ensure Layer 3 (Network Layer) connectivity is working.</li>
+                <img src="Project Report/images/problem3/resim2.png">
+            <li><strong>Check for ACL (Access Control List) Rules</strong><br>
+            If application access fails, you should check whether there are ACLs on the router that are blocking the specific port. 
+            Use the show access-lists command on the router to display all active ACL rules. 
+            Look specifically for any line that denies traffic based on TCP or UDP port numbers. 
+            For example, deny tcp any any eq 80 would block all HTTP traffic. 
+            If such a rule exists and is applied to the correct interface and direction (e.g., ip access-group 100 in), it would prevent the client from accessing the port. 
+            You can either modify or remove the rule depending on the requirement.
+            </li>    
+            <p>Start by checking if any ACLs are configured and applied to interfaces.This command displays all ACLs currently defined on the router. Look for lines like:</p>
+            <img src="Project Report/images/problem3/resim3.png">
+            <p>Then remove the rule with this command "no access-list 100 deny tcp any any eq 80"</p>
+            <img src="Project Report/images/problem3/resim4.png">
+            <p>then retest  it . Open Desktop → Web Browser Type the server’s IP (e.g., 192.168.2.10)
+The page should now load correctly if port 80 is no longer blocked.</p>
+            <img src="Project Report/images/problem3/resim5.png"><br>
+            <a href="Project Report/cisco_files/problem3.pkt" download> Download the packet tracer file of problem3</a>
+        </ol>
+     </div>
+
+     <div class="container"> 
+        <h2>Problem #4: Duplicate IP Address Issue</h2>
+        <img src="Project Report/images/problem4/resim2.png">
+        <p>A duplicate IP address happens when two devices on the same network are assigned the same IP address. Within a subnet, 
+            it is important that only one station is assigned to an IP address. 
+            Otherwise, this can create problems for end-users as they try to utilize applications and network services. </p>
+             <h2>Common Causes of Duplicate IP Address issue</h2>
+             <ul>
+              <li><strong>Static IP Allocation:</strong> Static IP Allocation is when a network admin manually configures IPs to hosts or devices. 
+                It is one of the prominent causes of windows IP address conflict that can lead to two devices being configured with the same IP address by the network admin.
+                 Using inefficient IP address management solutions like spreadsheets for IP management can lead to this issue.</li>  
+               <li><strong>DHCP Server Issues</strong>Using an effective DHCP server in your network is important to secure your devices from facing IP conflicts. Substandard DHCP servers could have bugs that cause IP conflicts by incorrect assignment of IP addresses to network devices during dynamic IP allocation.</li>  
+             </ul>
+             <h2>How to Fix:</h2>
+             <ol>
+                <li><strong>Identify Affected Devices</strong><br>Use the Discovery app to pinpoint the exact location of conflicting devices. The app shows you which devices are using duplicate IP addresses and identifies the specific switch ports where these devices are connected.</li>
+                <li><strong>Restart your router</strong><br> The simplest and first go-to method to solve the problem entails rebooting the router as it prompts a new IP address to be reassigned automatically to every device that is connected to the Wi-Fi network. NetAlly tools will show you if this fixed the conflict.</li>
+                <li><strong>Manual change of IP address</strong><br>If restarting the router doesn’t resolve the issue, setting a static IP address for each device manually can resolve the conflict. Make sure to write down these changes and check that they don’t overlap with addresses your DHCP server might give out.</li>
+               <img src="Project Report/images/problem4/resim1.png">
+                <li><strong>Check for DHCP</strong><br>Make sure that your devices are set to automatically get (DHCP) IP addresses. Sometimes, the issue could be that both devices are set to get static IP addresses.</li>
+                <li><strong>Disable and enable network adapter</strong><br>This could potentially fix the problem by resetting and refreshing the network adapter’s settings, potentially clearing up any issues caused by the duplicate IP address. This is particularly effective when dealing with temporary conflicts.</li>
+                <li><strong>Update network adapter driver</strong><br> If your network adapter drivers are outdated or corrupt, they can cause this problem. You might need to update your drivers to the latest version or reinstall them.</li>
+                <li><strong>Look for unauthorized DHCP servers</strong><br>Use NetAlly tools to find unauthorized DHCP servers on your network. These often appear when someone connects their home router to the company network, creating multiple active DHCP servers on the same network segment.</li>
+                <li><strong>Configure DHCP exclusions</strong><br> If some devices need static IP addresses, set up DHCP exclusion ranges to prevent your DHCP server from assigning these addresses to other devices.
+</li>
+            </ol>
+     </div>
+
+     <div class="container">
+        <h2>Problem #5: Loose or Damaged Cable</h2>
+        <img src="Project Report/images/problem5/resim1.jfif">
+        <p>Cables help us connect to the internet, and transfer data. 
+            But sometimes, they can have problems that affect how well they work</p>
+            <h3>Common Cable Issues and How to Fix Them</h3>
+            <ol>
+                <li><strong>Loose Connections</strong><br>Loose connections are a frequent problem with cables. This happens when cables aren’t plugged in properly. Or they become loose over time. This can cause your device to lose power. You will have a weak signal. Or your network will stop working altogether.
+
+                              To fix this issue, check if all cables are plugged in firmly. 
+                              If the problem continues, try a different port or connector to see if that solves it.</li>
+                <li><strong>Worn Out or Damaged Cables</strong><br>Cables can get frayed from everyday use. This can lead to problems like:
+
+losing connection
+power issues, and
+errors when transferring data
+But before that, you have to learn how the cables can become damaged. 
+It is mainly due to too much bending, or wear and tear. 
+But, apart from these another big reason is pets or rodents. They can chew the wire which causes unnecessary issues.
+If you see any damage or exposed wires, then immediately replace the cable. 
+Always, check your cables and handle them carefully to avoid damage.</li>
+                <li><strong>Bent or Broken Connector Pins</strong><br>Sometimes, connector pins can become bent or broken. This can happen if the cables are handled roughly. This can cause:
+
+poor connections
+unclear audio or video, or
+no connection at all
+You can resolve the issue by checking the pins for any damage. If you find bent pins, you might be able to fix them with tweezers. But if the pins are broken then there is no other better option than replacement of the cable.</li>
+                
+            </ol>
+     </div>
+     <div class="container">
+        <h2>Problem #6: Missing routes-No path defined to reach certain networks</h2>
+        <img src="Project Report/images/problem6/resim1.png">
+        <img src="Project Report/images/problem6/resim2.png">
+        <p>The error “Missing routes: No path defined to reach certain networks” occurs when a router or device does not have a valid route in its routing table to forward packets to a specific destination network. As a result, the data cannot be delivered and is dropped.
+
+In other words, the router doesn’t know where to send the traffic, so the packets are discarded.</p>
+         <h2>Common Causes of Missing Routes</h2>
+         <li>Static routes not configured</li>
+         <li>Dynamic routing protocols (e.g., RIP, OSPF, EIGRP) not enabled or misconfigured</li>
+         <li>Incorrect default gateway or next-hop settings.</li>
+         <h2>How to Fix:</h2>
+         <ol>
+            <li><strong>Configure Static Routes</strong><br> Manually add a static route to the destination network.<br>Router(config)# ip route [destination-network] [subnet-mask] [next-hop IP or exit-interface]</li>
+           <img src="Project Report/images/problem6/resim3.png">
+           <li><strong>Use a Dynamic Routing Protocol</strong><br>Configure a routing protocol like RIP, OSPF, or EIGRP to automatically exchange routing information.
+
+Example (OSPF):<br>Router(config)# router ospf 1<br>
+Router(config-router)# network 192.168.1.0 0.0.0.255 area 0<br>
+Router(config-router)# network 10.0.0.0 0.0.0.3 area 0
+</li>
+     <a href="Project Report/cisco_files/problem6.pkt" download>Download the packet tracer file of problem6</a>
+    </ol>
+         
+
+     </div>
+
+     <div class="container">
+        <h2>Problem #7 HTTP 408 Request Timeout Error</h2>
+        <img src="Project Report/images/problem7/resim1.png">
+        <p>When one is browsing, the HTTP 408 error message that is feared by many can be very frustrating. It indicates a "Request Timeout,” which means that there has been a breakdown in communication between your browser and the server you are trying to reach. In this event, while trying to open a page on your web browser, the server fails to receive your full request within a specified time.</p>
+         <h2>Common Causes of HTTP 408 errors</h2>
+         <h4>Client-side Causes</h4>
+         <li><strong>Slow network connection:</strong>If your internet is slow or unstable, the request may take too much time to get to the server and may fail.</li>
+         <li><strong>Browser or application timeout settings:</strong>: Some browsers and applications have inbuilt timeout settings, which can cause a 408 error if the server does not respond within a certain period. These settings can usually be changed in the browser or application preferences.</li>
+         <li><strong>Incorrect URL:</strong>The request may not be found by the server when you mistype the URL or input an invalid address, and it could become timed out waiting for a response.</li>
+        <li><strong>Client-side firewall or security software:</strong>Sometimes your device’s excessively strict firewall or security software might hinder your request, causing it to timeout.</li>
+        <br><h4>Server-side Causes</h4>
+        <li><strong>Server overload</strong>: This can happen if your server is overwhelmed with too many requests and fails to process your request on time, eventually leading to a timeout.</li>
+        <li><strong>Server-side timeout settings:</strong> The servers can have their own timeout settings as well, which would lead to 408 errors in case the client does not respond within a given period of time.</li>
+        <li><strong>Backend application issues: </strong>This may make the server wait for a response until it times out, when the application running on it has an error or delays in responding.</li>
+        <li><strong>Network issues between the client and server:</strong> In addition, network problems between your device and the server, like high latency or packet loss, are another reason why requests will take too long and will time out.</li>
+    <h2>How to Fix:</h2>
+    <ol>
+        <li> <a href="#cozum7.1">Basic Checks</a></li>
+        <li> <a href="#cozum7.2">Client-Side Solutions: Optimizing Your Browser</a></li>
+        <li> <a href="#cozum7.3">Advanced Client-Side Troubleshooting</a></li>
+        <li> <a href="#cozum7.4">Server-Side Solutions (for Technical Users or Website Administrators)</a></li>
+        <li> <a href="#cozum7.5">Advanced Troubleshooting: When Basic Steps Fall Short</a></li> 
+        <li> <a href="#cozum7.6">Preventing HTTP 408 Errors: A Proactive Approach</a></li>
+    
+    </ol>
+
+    <ol>
+        <li id="cozum7.1"><h3>Basic Checks</h3></li>
+            <ul>
+                <li><h4>Refresh the page</h4> A simple refresh (using the F5 key or clicking the reload button) can often resolve temporary network glitches or server-side hiccups that might have caused the timeout.</li>
+                <li><h4>Double-check the URL</h4>Typos in the web address are a prevalent culprit. Ensure the URL is entered correctly, paying close attention to capitalization, hyphens, and special characters.</li>
+                <li><h4>Test Your Internet Connection</h4> Visit a different website, preferably a well-known one like Google or Wikipedia, to verify if the issue is specific to one site or a broader internet connectivity problem. Run an internet speed test to gauge your bandwidth and identify any potential bottlenecks.</li>
+            </ul>
+        
+            <li id="cozum7.2"><h3>Client-Side Solutions: Optimizing Your Browser</h3></li>
+           <ul>
+           <li><h4>Clear Your Browser Cache</h4>An overloaded cache can lead to slow loading times and potential timeouts. Clear your browser's cache and cookies to remove temporary website data that might be causing conflicts. This can be done from your browser's settings menu.</li>
+           <li><h4>Disable Browser Extensions</h4>Certain browser extensions might interfere with website rendering or introduce scripts that can delay communication with the server. Try temporarily disabling extensions to identify any conflicts. Pay close attention to extensions that modify page content or functionality (e.g., ad blockers, privacy tools, and download managers).</li>   
+           <li><h4>Check for Software Updates</h4>If you are using an outdated browser or OS, it may have some compatibility problems with some websites and security holes that can deny effective communication. Update your browser and operating system to the latest versions in order to enjoy bug fixes, performance improvements, and better security. Alternatively, most browsers will update automatically, while you can manually check for updates within the browser settings.</li>
+           </ul>
+
+           <li id="cozum7.3"><h3>Advanced Client-Side Troubleshooting</h3></li>
+           <ul>
+            <li><h4>Inspect Network Requests</h4>Modern browsers include developer tools that allow you to inspect network requests made by your browser. This can provide valuable insights into the communication process and identify potential delays during the request-response cycle. Look for entries with high latency (loading time) or failed requests that might indicate issues on your end.</li>
+            <li><h4>Change DNS Servers</h4>This is not common, but when your DNS provider has issues, they contribute to timeouts. In the meantime, try changing to a public DNS server like Google Public DNS (8.8.8.8 and 8.8.4.4) or Cloudflare DNS (1.1.1.1 and 1.0.0.1), which might help resolve this issue temporarily for you, and then see if it’s fixed now.</li>
+        </ul>
+
+         <li id="cozum7.4"><h3>Server-Side Solutions (for Technical Users or Website Administrators)</h3></li>
+         <ul>
+            <li><h4>Review Recent Website Changes</h4> If you manage the website experiencing the error, consider any recent modifications to plugins, themes, databases, or server configurations that might have caused timeouts. These changes could introduce inefficiencies or conflicts that delay server responses. Analyze server logs (covered in the next step) to pinpoint any issues introduced by recent changes.</li>
+            <li><h4>Inspect Server-Side Logs</h4>Server logs provide a treasure trove of information about website activity and potential errors. Look for entries related to timeouts during the time you encountered the error. These logs might indicate specific issues like slow database queries, resource overload (e.g., high CPU or memory usage), or errors within custom website scripts. Analyze the logs to identify bottlenecks or errors that might be causing timeouts.</li>
+            <li><h4>Understanding Server Timeouts</h4>Web servers like Apache and Nginx allow the configuration of timeout settings. These conditions play a role in defining the maximum amount of time that the server can wait for the client to complete its request before disconnecting it. If you have access to server administration tools, explore increasing the timeout values cautiously. </li>
+            <li><h4></h4></li>
+         </ul>
+
+         <li id="cozum7.5"><h3>Advanced Troubleshooting: When Basic Steps Fall Short</h3> </li>
+         <li> <h4>Contact the website owner</h4> If the above steps don't resolve the issue and you manage the website experiencing the error, consider contacting your web hosting provider for further assistance. They have the capacity to dig deeper into server-side configurations, monitor server logs more elaborately, and identify potential issues outside the realm of basic troubleshooting.
+</li>
+         <li> <h4>Consider Website Monitoring Tools</h4>Proactive website monitoring tools can be invaluable in preventing HTTP 408 errors. This is why these tools are always on standby to track website performance in order to prevent any potential slow loading time or resource starvation that may lead to time-outs before they start impacting the client experience. The most popular site monitoring tools include Pingdom, UptimeRobot, Datadog, etc.</li>
+         
+         <li id="cozum7.6"><h3>Preventing HTTP 408 Errors: A Proactive Approach</h3></li>
+
+         <ul>
+            <li><h4>Maintain a Stable Internet Connection</h4> Ensure a reliable internet connection with sufficient bandwidth to minimize the possibility of timeouts due to slow or unstable network conditions. Sometimes, especially when there are too many timeouts being experienced regularly, consider using a wired Ethernet connection instead of Wi-Fi.</li>
+            <li><h4>Keep software updated</h4>Regularly update your browser, operating system, and any website management tools (if applicable) to benefit from bug fixes, performance enhancements, and improved security. Outdated software can introduce vulnerabilities or compatibility issues that might contribute to timeouts.</li>
+            <li><h4>Optimize Website Performance</h4>If you manage a website, prioritize website performance optimization. It covers aspects such as code minimization and image compression, among other caching mechanisms that reduce page loading times as well as minimize server resource consumption required in processing requests. This also helps prevent timeouts due to overloaded servers.</li>
+            <li><h4>Monitor Server Resources</h4>Regularly monitor server resource usage (CPU, memory, and storage) to identify potential bottlenecks. If server resources remain consistently maxed out, keep in mind that you need to either upgrade your hosting plan or optimize your website so as to reduce resource consumption.</li>
+            <li><h4>Test Thoroughly After Changes</h4>Whenever making significant changes to your website (e.g., installing plugins, updating themes), thoroughly test your website's functionality and performance to identify any potential issues that might lead to timeouts.
+Also Read:</li>
+        </ul>
+        
+        </ol>
+       
+    </div>
+
+    <div class="container"><h2>Problem #8:Destination Host Unreachable</h2>
+    <img src="Project Report/images/problem8/resim1.png">
+    <p>Performing a CMD ping test can measure your latency, check the network connectivity of your computer, and tell you the quality of your connection. However, lots of people receive the destination host unreachable error when they ping test for an IP address.What does the ping destination host unreachable error mean? According to a survey, the error usually means there is no route to the destination. If the message only displays “Destination host unreachable”, it indicates that your PC doesn’t have a route to the destination.
+
+If it says “reply from "IP address": Destination host unreachable, it means there is a routing problem with the remote router.</p>
+
+<h2>How to Fix:</h2>
+<ol>
+    <li><h3> Check Your Internet Connection</h3>First of all, you need to rule out the internet connection issues. You can open the default browser on your computer, visit a site like google.com, and check if it can load successfully. If it works, it means that there’s a problem with your local network connection, instead of a broader connection issue.</li>
+    <li><h3> Test Your IPv6 Connection</h3> if there is a problem with the IPv6 connection, you may encounter the destination host unreacheable error too. So, we recommend you test the IPv6 connection on your PC.
+
+<strong>Step1.
+</strong> Press the Win + R keys to open the Run dialog box, and then type cmd in it and hit Enter to open Command Prompt.
+<img src="Project Report/images/problem8/resim2.png"><br>
+<strong>Step2.</strong>In the Command Prompt window, type the ping -6 command plus the IP address to isolate the IPv6 line. For example, run the “ping -6 192.168.1.1” command.
+</li><img src="Project Report/images/problem8/resim3.png">
+   <br> <strong>Step 3.</strong>If it still shows the destination host unreachable error, the problem may be related to the remote gateway handling the request. To rule out this, you can run the traceroute command.
+<img src="Project Report/images/problem8/resim4.png" alt="">
+<br><strong>Step4.</strong> If the gateway unreachable error persists, you can check if the IP address is configured as the default gateway. To check that, run the netsh command. With the netsh window opened, type the following commands in order and hit Enter after each one.
+
+interface ipv6
+
+interface ipv6>showconfig
+<img src="Project Report/images/problem8/resim6.png">
+<br><strong>Step5.</strong>If the netsh command doesn’t show the default gateway or the gateway address is not the default one, you can move down to the following solution.
+
+<li><h3>Add the Right Gateway Address to the Destination Host Manually</h3></li>
+In addition, you can try adding the correct gateway address for the destination host manually. Some users reported that the ping destination host unreachable error can be resolved by this method. Let’s have a try.
+<br><br>
+
+<strong>Step1.</strong>Press the Win + I keys to open the Settings window and select Network and Internet.<br>
+<strong>Step2.</strong>Select Ethernet from the left pane and click on Change adapter options from the right pane.<br>
+<strong>Step3.</strong>Right-click the affected Local Area Network connection and select Properties.<br>
+<strong>Step4.</strong>Navigate to the Networking tab, select Internet Protocol Version 6 (TCP/IPv6) and click on Properties.<br>
+<strong>Step5.</strong>In the properties window, type the correct IP address into the Default gateway box and click on OK to save the change. Once done, restart your computer and ping the IP address again to see if the gateway unreachable error disappears.<br>
+</ol>
+
+
+    </div>
+
+    <div class="container"><h2>Problem #9:High Bandwidth Consumption</h2>
+    <p>Bandwidth is the maximum data transfer capacity transmitted over an internet connection in a given amount of time. The more data you transfer, the higher your bandwidth consumption. Because networks have a limit on the rate of data transfer, businesses need to manage their bandwidth usage to maintain optimal network performance</p>
+    <h2>Common Causes of High Bandwidth Consumption</h2>
+    <strong>Multiple Users or Devices:</strong>The more users are connected to the network, the higher the overall bandwidth consumption.<br>
+    <strong>Complexity of Tasks:</strong>Usage also depends on how intensive the cloud-based applications are. With the increasing reliance on platforms like CRM, project management tools, and file-sharing services, the network becomes even more overloaded. Tasks such as streaming videos and music, as well as online gaming and file downloads, can also consume more bandwidth.<br>
+    <strong>Bandwidth Capacity:</strong>Businesses with limited bandwidth plans will experience bottlenecks and slowdowns if usage exceeds their capacity.<br>
+    <strong>Network Congestion</strong>Sharing one connection with many businesses or a congested internet service provider (ISP) can lead to bandwidth limitations.<br>
+    <strong>Wireless Network Issues:</strong>Sometimes, the issue lies in technological factors. Outdated Wi-Fi routers or inadequate coverage can lead to weak signal strength and slow speeds, even with sufficient bandwidth.<br>
+    <strong>Malware and Viruses:</strong>Malicious software can consume bandwidth without your knowledge and pose security risks. By sending or requesting large amounts of data, the malware takes up all the available bandwidth.<br>
+    <strong>Software Updates</strong>Operating systems and applications may update automatically and consume high bandwidth.<br>
+    <h2>How to Fix:</h2>
+     <li><h3>Quality of Service (QoS)</h3>Quality of Service allows you to allocate bandwidth for more critical applications. For example, video conferencing requires higher bandwidth. You can reserve a dedicated portion of the bandwidth for specific video conferencing applications so that they don’t compete with less important traffic.</li>
+<br> <li><h3>Analyze Bandwidth Usage</h3>Understanding usage patterns and bandwidth limits provided by your ISP helps you identify peak usage times and potential bottlenecks. You can review your router’s traffic monitoring or use third-party tools to get a detailed account of your bandwidth consumption.</li>
+<br> <li><h3>Use Network Monitoring Tools</h3>Network monitoring tools provide real-time insights into network traffic. These tools can also detect unusual activity and alert you to potential issues. This proactive approach allows you to make well-informed decisions on better managing your network.</li>
+<br> <li><h3> Set Access Restrictions</h3>Implementing access restrictions helps manage and control bandwidth usage. You can block specific websites or restrict access to certain devices during peak hours to ensure all critical applications have sufficient bandwidth.</li>
+<br> <li><h3>Identify Network Users Hogging Bandwidth</h3>Sometimes, whether intentionally or not, specific users or unauthorized individuals may be hogging bandwidth. Monitoring tools can identify which devices and users are using the most bandwidth. Once identified, you can restrict their access or help them improve their usage habits. This is particularly important in shared environments where people might be unknowingly consuming high bandwidth.</li>
+<br> <li><h3>Limit High-Bandwidth Activities</h3>Limit resource-intensive tasks, such as HD video streaming and online gaming when bandwidth is needed for high-priority activities. You can adjust QoS settings to prioritize essential applications to prevent network congestion.</li>
+<br> <li><h3>Check Your Network Devices</h3>Ensure that your routers, modems, and network adapters are up to date with the latest firmware. Outdated or malfunctioning hardware is sometimes to blame for high bandwidth consumption and slow internet speeds</li>
+<br> <li><h3>Scan and Protect Against Malware</h3>Viruses can decrease the speed of your network and bring disastrous consequences to your business. Use a reliable antivirus or invest in network security solutions to protect your devices from malware threats that could exploit your bandwidth.</li>
+</div>
+
+
+
+</body>
+
+
+</html>

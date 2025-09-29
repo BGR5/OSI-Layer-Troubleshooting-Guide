@@ -1,0 +1,141 @@
+<style>
+  .container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px 30px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+  .container h1 {
+    color: #004a99;
+    border-bottom: 3px solid #007acc;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+  }
+  .container h2 {
+    color: #0066cc;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+  .container p {
+    margin-bottom: 18px;
+    font-size: 1rem;
+  }
+  .container ul, .container ol {
+    margin-left: 20px;
+    margin-bottom: 25px;
+  }
+  .container ul li, .container ol li {
+    margin-bottom: 12px;
+  }
+  .container ol li {
+    font-weight: 500;
+  }
+  .container a {
+    color: #007acc;
+    text-decoration: none;
+  }
+  .container a:hover {
+    text-decoration: underline;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+  }
+  strong {
+    color: #004a99;
+  }
+  p strong {
+    font-weight: 600;
+  }
+</style>
+
+<div class="container">
+  <h1>Problem #1: DNS Server Not Responding</h1>
+
+  <p>
+    A DNS is a naming system that takes alphanumeric domain names (or “hostnames”) and turns them into numeric IP addresses. Essentially, DNS servers act as translators.
+    When you input a web address into your browser, it is forwarded to a DNS server from your router, where it’s then resolved and returned as an IP address. However, if the DNS server is unable to properly complete this name resolution process, the end result is usually a message indicating that the DNS server is not responding.
+  </p>
+
+  <p>
+    “DNS server not responding” means that your browser was unable to establish a connection to the internet.
+  </p>
+
+  <h2>Common Causes of DNS Issues</h2>
+  <ul>
+    <li>Hardware and software issues</li>
+    <li>Incorrect or missing DNS records</li>
+    <li>The DNS server might be unavailable</li>
+  </ul>
+
+  <h2>How to Fix:</h2>
+  <ul>
+    <li><a href="#cozum1.1">Use a Different Browser</a></li>
+    <li><a href="#cozum1.2">Change Your DNS Server Address</a></li>
+    <li><a href="#cozum1.3">Turn Off Antivirus and Firewall</a></li>
+  </ul>
+
+  <ol>
+    <li id="cozum1.1">
+      <strong>Use a Different Browser:</strong><br>
+      For example, if your default browser is Safari or Google Chrome, visit the desired website from Mozilla Firefox or Microsoft Edge instead.
+      If switching browsers works, you’ll likely need to update your default browser to the latest version or uninstall and reinstall it.
+      However, if you still see the “DNS server not responding” error, you can rule out your browser as the source of the issue.
+    </li>
+
+    <li id="cozum1.2">
+      <strong>Change Your DNS Server Address:</strong><br>
+      <img src="Project Report/images/problem1/Resim1.png" alt="DNS Hatası" />
+      By default, your home network obtains a DNS server address from your internet service provider (ISP).
+      Start by clicking the Windows button in the bottom-left corner of the taskbar. In the search field, type “Ağ durumu”, and then select <strong>Ağ Durumu</strong> from the menu that appears.
+
+      <img src="Project Report/images/problem1/Resim2.png" alt="DNS Hatası" />
+      <p>In the window that opens, click on <strong>"Ağ ve Paylaşım Merkezi"</strong></p>
+
+      <img src="Project Report/images/problem1/Resim3.png" alt="DNS Hatası" />
+      <p>Next, choose the internet adapter you’re currently using</p>
+
+      <img src="Project Report/images/problem1/Resim4.png" alt="DNS Hatası" />
+      <p>Click <strong>"Özellikler"</strong></p>
+
+      <img src="Project Report/images/problem1/Resim5.png" alt="DNS Hatası" />
+      <p>
+        In the window that opens, choose <strong>İnternet Protokolü Sürüm 4 (TCP/IPv4)</strong> and then click the <strong>"Özellikler"</strong> button.
+      </p>
+
+      <img src="Project Report/images/problem1/Resim6.png" alt="DNS Hatası" />
+      <p>
+        To manually assign a different DNS server address, select <strong>"Aşağıdaki DNS sunucu adreslerini kullan"</strong> and input the address of an alternative server.
+      </p>
+
+      <img src="Project Report/images/problem1/Resim7.png" alt="DNS Hatası" />
+      <img src="Project Report/images/problem1/Resim8.png" alt="DNS Hatası" />
+
+      <p>
+        After entering the new DNS information, click <strong>"Tamam"</strong> followed by <strong>"Uygula"</strong>.
+        Restart your web browser and visit the website again to check if the issue is resolved.
+      </p>
+    </li>
+
+    <li id="cozum1.3">
+      <strong>Turn Off Antivirus and Firewall:</strong><br>
+      Temporarily deactivate your firewall. Antivirus software and firewalls are critical for safeguarding your devices, but they can sometimes cause issues that interfere with network connections.
+
+      <p>
+        For Windows users, you can do this by going to:<br />
+        <strong>Güncelleştirme ve Güvenlik &gt; Windows Güvenliği &gt; Virüs ve Tehdit Koruması &gt; Ayarları Yönet</strong>
+      </p>
+    </li>
+  </ol>
+</div>
+

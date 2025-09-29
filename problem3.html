@@ -1,0 +1,63 @@
+<div class="container" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 900px; margin: auto; padding: 20px; color: #2c3e50; line-height: 1.6;">
+
+  <h1 style="border-bottom: 3px solid #2980b9; padding-bottom: 8px; margin-bottom: 20px;">Problem #3: Port Blocking Issue</h1>
+
+  <img src="Project Report/images/problem3/resim1.png" alt="Port Blocking Issue" 
+       style="width: 100%; max-width: 600px; border-radius: 6px; margin-bottom: 20px; box-shadow: 0 3px 8px rgba(0,0,0,0.1); border: 1px solid #ddd;">
+
+  <p style="font-size: 16px;">
+    A client device (e.g., PC) cannot connect to a server using a specific TCP or UDP port (e.g., port 80 for HTTP, port 443 for HTTPS, or port 25 for SMTP). The connection times out or fails even though IP connectivity (ping) might be working.
+  </p>
+
+  <h2 style="color: #2980b9; margin-top: 40px; margin-bottom: 15px;">Common Causes of Port Blocking Issue</h2>
+  <ul style="font-size: 16px; margin-left: 20px; margin-bottom: 30px;">
+    <li>Firewall Rules (Local or Network)</li>
+    <li>NAT (Network Address Translation) Issues</li>
+    <li>Misconfigured Router or ACLs (Access Control List)</li>
+  </ul>
+
+  <h2 style="color: #2980b9; margin-bottom: 15px;">How to Fix:</h2>
+  <ol style="font-size: 16px; margin-left: 20px;">
+
+    <li style="margin-bottom: 20px;">
+      <strong>Misconfigured Router or ACLs (Access Control List)</strong><br>
+      Access Control Lists (ACLs) are used in routers and switches to control which packets are allowed or denied based on criteria such as IP addresses, protocols, and ports. If a port (like TCP port 80) is being blocked, an ACL might be explicitly denying it. This can happen unintentionally due to a misconfigured rule or incorrect placement of the ACL.
+    </li>
+
+    <li style="margin-bottom: 20px;">
+      <strong>Basic IP Connectivity</strong><br>
+      Command: <code>ping [destination IP]</code><br>
+      Purpose: Ensure Layer 3 (Network Layer) connectivity is working.
+      <br>
+      <img src="Project Report/images/problem3/resim2.png" alt="Ping Command Example" 
+           style="width: 100%; max-width: 600px; margin-top: 10px; border-radius: 6px; box-shadow: 0 3px 8px rgba(0,0,0,0.1); border: 1px solid #ddd;">
+    </li>
+
+    <li style="margin-bottom: 20px;">
+      <strong>Check for ACL (Access Control List) Rules</strong><br>
+      If application access fails, check whether ACLs on the router are blocking the specific port. Use the <code>show access-lists</code> command to display active ACL rules. Look for any lines denying traffic based on TCP or UDP port numbers, e.g., <code>deny tcp any any eq 80</code> blocks HTTP traffic.<br>
+      If such a rule exists and is applied on the correct interface and direction (e.g., <code>ip access-group 100 in</code>), it prevents access. You can modify or remove the rule depending on your needs.
+    </li>
+
+  </ol>
+
+  <p style="font-size: 16px; margin-top: 10px;">Start by checking configured ACLs on interfaces. The command shows all ACLs currently on the router. Look for lines like:</p>
+  <img src="Project Report/images/problem3/resim3.png" alt="Show Access Lists Command Output" 
+       style="width: 100%; max-width: 600px; border-radius: 6px; margin-bottom: 15px; box-shadow: 0 3px 8px rgba(0,0,0,0.1); border: 1px solid #ddd;">
+
+  <p style="font-size: 16px; margin-bottom: 15px;">Remove the blocking rule with the command:</p>
+  <code style="display: block; background: #f4f4f4; padding: 8px 12px; border-radius: 4px; margin-bottom: 15px;">no access-list 100 deny tcp any any eq 80</code>
+  <img src="Project Report/images/problem3/resim4.png" alt="Remove ACL Rule Command" 
+       style="width: 100%; max-width: 600px; border-radius: 6px; margin-bottom: 20px; box-shadow: 0 3px 8px rgba(0,0,0,0.1); border: 1px solid #ddd;">
+
+  <p style="font-size: 16px; margin-bottom: 15px;">
+    Then retest by opening Desktop → Web Browser and typing the server’s IP (e.g., 192.168.2.10). The page should load correctly if port 80 is no longer blocked.
+  </p>
+  <img src="Project Report/images/problem3/resim5.png" alt="Webpage Loading After Fix" 
+       style="width: 100%; max-width: 600px; border-radius: 6px; margin-bottom: 20px; box-shadow: 0 3px 8px rgba(0,0,0,0.1); border: 1px solid #ddd;">
+
+  <a href="Project Report/cisco_files/problem3.pkt" download style="display: inline-block; background-color: #2980b9; color: white; padding: 10px 18px; border-radius: 5px; text-decoration: none; font-weight: 600; margin-bottom: 10px;">
+    Download the Packet Tracer file of Problem 3
+  </a>
+
+</div>
